@@ -1,0 +1,187 @@
+{
+  "id": "http://submission.ebi.ac.uk/api/jsonschema-repo/ERC000030",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ENA Tara Oceans Schema",
+  "description": "Minimum information about a Tara Oceans sample. A checklist for reporting metadata of oceanic plankton samples associated with genomics data from the Tara Oceans Expedition.",
+  "version": "1.0.0",
+  "author": "subs",
+  "type": "object",
+  "properties": {
+    "marineEvent": {
+      "type": "object",
+      "required": [
+        "eventDateTimeStart",
+        "latitudeStart",
+        "longitudeStart"
+      ],
+      "properties": {
+        "eventLabel" : {
+          "type": "string",
+          "minLength": 3
+        },
+        "eventDateTimeStart": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "eventDateTimeEnd": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "latitudeStart": {
+          "type": "string",
+          "pattern": "^-?\d{1,2}\.?\d{0,4}$"
+        },
+        "longitudeStart": {
+          "type": "string",
+          "pattern": "^-?\d{1,2}\.?\d{0,4}$"
+        },
+        "latitudeEnd": {
+          "type": "string",
+          "pattern": "^-?\d{1,2}\.?\d{0,4}$"
+        },
+        "longitudeEnd": {
+          "type": "string",
+          "pattern": "^-?\d{1,2}\.?\d{0,4}$"
+        }
+      }
+    },
+    "marineSample": {
+      "type": "object",
+      "required": [
+        "depth",
+        "protocolLabel"
+      ],
+      "properties": {
+        "depth": {
+          "type": "string",
+          "pattern": "^-?\d{1,4}\.?\d{0,2}$"
+        },
+        "sampleCollectionDevice": {
+          "type": "string"
+        },
+        "protocolLabel": {
+          "type": "string"
+        },
+        "sizeFractionLowerThreshold": {
+          "type": "string"
+        },
+        "sizeFractionUpperThreshold": {
+          "type": "string"
+        },
+        "sampleStatus": {
+          "type": "string"
+        },
+        "lastUpdateDate": {
+          "type": "string",
+          "format": "date"
+        }
+      }
+    },
+    "nonSampleTerms": {
+      "type": "object",
+      "required": [
+        "projectName"
+      ],
+      "properties": {
+        "projectName": {
+          "type": "string"
+        }
+      }
+    },
+    "collectionEventInformation": {
+      "type": "object",
+      "required": [
+        "environmentalPackage",
+        "environmentBiome",
+        "environmentFeature",
+        "environmentMaterial"
+      ],
+      "properties": {
+        "environmentalPackage": {
+          "type": "string",
+          "enum": [
+            "Air", "Built-environment", "Host-associated", "Human-associated",
+            "Human-gut", "Human-oral", "Human-skin", "Human-vaginal",
+            "Microbial mat/biofilm", "Miscellaneous natural or artificial environment",
+            "Plant-associated", "Sediment", "Soil", "Wastewater/sludge",
+            "Water"
+          ]
+        },
+        "environmentBiome": {
+          "type": "string"
+        },
+        "environmentFeature": {
+          "type": "string"
+        },
+        "environmentMaterial": {
+          "type": "string"
+        }
+      }
+    },
+    "marineSampling": {
+      "type": "object",
+      "required": [
+        "samplingCampaign",
+        "samplingStation",
+        "samplingPlatform"
+      ],
+      "properties": {
+        "samplingCampaign": {
+          "type": "string"
+        },
+        "samplingStation": {
+          "type": "string"
+        },
+        "samplingPlatform": {
+          "type": "string"
+        }
+      }
+    },
+    "marineEnvironment": {
+      "type": "object",
+      "required": [
+        "marineRegion",
+        "salinitySensor",
+        "temperature"
+      ],
+      "properties": {
+        "marineRegion": {
+          "type": "string",
+          "enum": []
+        },
+        "salinitySensor": {
+          "type": "string",
+          "pattern": "^\d{1,2}\.?\d{0,4}$"
+        },
+        "oxygenSensor": {
+          "type": "string",
+          "pattern": "^\d{1,3}\.?\d{0,4}$"
+        },
+        "nitrateSensor": {
+          "type": "string",
+          "pattern": "^\d{1,2}\.?\d{0,4}$"
+        },
+        "temperature": {
+          "type": "string",
+          "pattern": "^\d{1,2}\.?\d{0,4}$"
+        },
+        "chlorophyllSensor": {
+          "type": "string",
+          "pattern": "^\d{1,2}\.?\d{0,4}$"
+        }
+      }
+    },
+    "reference": {
+      "type": "object",
+      "properties": {
+        "citation":  {
+          "type": "string"
+        },
+        "furtherDetails": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    }
+  }
+}
