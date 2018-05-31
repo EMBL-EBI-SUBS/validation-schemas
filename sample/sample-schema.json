@@ -30,7 +30,10 @@
             "type": "string", 
             "minLength": 1 
         },
-        "releaseDate": {},
+        "releaseDate": {
+            "type": "string",
+            "format": "date"
+        },
         "attributes": {
             "description": "Attributes for describing a sample.",
             "type": "object",
