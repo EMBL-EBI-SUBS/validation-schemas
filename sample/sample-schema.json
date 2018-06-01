@@ -70,14 +70,14 @@
                     "alias": { "type": "string", "minLength": 1 },
                     "accession": { "type": "string", "minLength": 1 },
                     "team": { "type": "string", "minLength": 1 },
-                    "nature": {
+                    "relationshipNature": {
                         "type": "string",
                         "enum": [ "derived from", "child of", "same as", "recurated from" ]
                     }
                 },
                 "oneOf": [
-                    { "required": ["alias", "team", "nature"] },
-                    { "required": ["accession", "nature"] }
+                    { "required": ["alias", "team", "relationshipNature"] },
+                    { "required": ["accession", "relationshipNature"] }
                 ]
             }
         }
