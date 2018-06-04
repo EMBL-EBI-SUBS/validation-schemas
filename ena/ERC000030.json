@@ -64,8 +64,6 @@
       "properties": {
         "marineEventLabel": {
           "description": "An Event corresponds to the deployment of a sampling device. It is bound in space and time. The Event Label is a unique identifier composed of the project prefix \"TARA\", sampling date/time \"yyyymmddThh:mm:ssZ\", station number \"000\" and a short label to indicate the sampling device used, e.g. \"EVENT_CAST\", \"EVENT_NET\", \"EVENT_PUMP\". Example: TARA_20110416T1508Z_100_EVENT_CAST.",
-          "type": "array",
-          "minItems": 1,
           "items": {
             "properties": {
               "value": {
@@ -78,8 +76,6 @@
         },
         "marineEventDateTimeStart": {
           "description": "Date and time in UTC when the sampling event started, e.g. each CTD cast, net tow, or bucket collection is a distinct event. Format: yyyy-mm-ddThh:mm:ssZ. Example: 2011-04-16T15:05:30Z.",
-          "type": "array",
-          "minItems": 1,
           "items": {
             "properties": {
               "value": {
@@ -91,8 +87,6 @@
         },
         "marineEventDateTimeEnd": {
           "description": "Date and time in UTC when the sampling event ended, e.g. each CTD cast, net tow, or bucket collection is a distinct event. Format: yyyy-mm-ddThh:mm:ssZ. Example: 2011-04-16T15:38:00Z.",
-          "type": "array",
-          "minItems": 1,
           "items": {
             "properties": {
               "value": {
@@ -104,8 +98,6 @@
         },
         "marineEventLatitudeStart": {
           "description": "Latitude of the location where the sampling event started, e.g. each CTD cast, net tow, or bucket collection is a distinct event. Format: ##.####, Decimal degrees; North= +, South= -; Use WGS 84 for GPS data. Example: -24.6666.",
-          "type": "array",
-          "minItems": 1,
           "items": {
             "properties": {
               "value": {
@@ -117,8 +109,6 @@
         },
         "marineEventLongitudeStart": {
           "description": "Longitude of the location where the sampling event started, e.g. each CTD cast, net tow, or bucket collection is a distinct event. Format: ###.####, Decimal degrees; East= +, West= -; Use WGS 84 for GPS data. Example: -096.1012.",
-          "type": "array",
-          "minItems": 1,
           "items": {
             "properties": {
               "value": {
@@ -130,8 +120,6 @@
         },
         "marineEventLatitudeEnd": {
           "description": "Latitude of the location where the sampling event ended, e.g. each CTD cast, net tow, or bucket collection is a distinct event. Format: ##.####, Decimal degrees; North= +, South= -; Use WGS 84 for GPS data. Example: -24.6643.",
-          "type": "array",
-          "minItems": 1,
           "items": {
             "properties": {
               "value": {
@@ -143,8 +131,6 @@
         },
         "marineEventLongitudeEnd": {
           "description": "Longitude of the location where the sampling event ended, e.g. each CTD cast, net tow, or bucket collection is a distinct event. Format: ###.####, Decimal degrees; East= +, West= -; Use WGS 84 for GPS data. Example: -096.1171.",
-          "type": "array",
-          "minItems": 1,
           "items": {
             "properties": {
               "value": {
@@ -156,8 +142,6 @@
         },
         "marineSampleDepth": {
           "description": "The distance below the surface of the water at which a measurement was made or a sample was collected. Format: ####.##, Positive below the sea surface. SDN:P06:46:ULAA for m. Example: 14.71",
-          "type": "array",
-          "minItems": 1,
           "items": {
             "properties": {
               "value": {
@@ -169,8 +153,6 @@
         },
         "marineSampleSampleCollectionDevice": {
           "description": "The sampling device(s) used for the Event. Example: CTD(sbe9C)/Rosette with Niskin bottles.",
-          "type": "array",
-          "minItems": 1,
           "items": {
             "properties": {
               "value": {
@@ -181,8 +163,6 @@
         },
         "marineSampleProtocolLabel": {
           "description": "Identifies the protocol used to produce the sample, e.g. filtration and preservation. Example: BACT_NUC_W0.22-1.6.",
-          "type": "array",
-          "minItems": 1,
           "items": {
             "properties": {
               "value": {
@@ -193,8 +173,6 @@
         },
         "marineSampleSizeFractionLowerThreshold": {
           "description": "SAMPLE_PROTOCOL_Size-Fraction_Lower-Threshold_(µm) indicates the lower size threshold. Materials smaller than the size threshold are excluded from the sample. Example: 0.22 µm",
-          "type": "array",
-          "minItems": 1,
           "items": {
             "properties": {
               "value": {
@@ -205,8 +183,6 @@
         },
         "marineSampleSizeFractionUpperThreshold": {
           "description": "PLE_PROTOCOL_Size-Fraction_Upper-Threshold_(µm) indicates the upper size threshold. Materials larger than the size threshold are excluded from the sample.Example: 1.6 µm",
-          "type": "array",
-          "minItems": 1,
           "items": {
             "properties": {
               "value": {
@@ -217,8 +193,6 @@
         },
         "marineSampleSampleStatus": {
           "description": "Refers to the completness of sample metadata validation. Example: preliminary but can be used to provide data discovery services.",
-          "type": "array",
-          "minItems": 1,
           "items": {
             "properties": {
               "value": {
@@ -229,8 +203,6 @@
         },
         "marineSampleLastUpdateDate": {
           "description": "Date of the last update of this sample in the SAMPLES REGISTRY. Example: 2014-03-01Z.",
-          "type": "array",
-          "minItems": 1,
           "items": {
             "properties": {
               "value": {
@@ -242,8 +214,6 @@
         },
         "nonSampleTermsProjectName": {
           "description": "Name of the project within which the sequencing was organized.",
-          "type": "array",
-          "minItems": 1,
           "items": {
             "properties": {
               "value": {
@@ -254,8 +224,6 @@
         },
         "collectionEventInformationEnvironmentalPackage": {
           "description": "MIGS/MIMS/MIMARKS extension for reporting of measurements and observations obtained from one or more of the environments where the sample was obtained. All environmental packages listed here are further defined in separate subtables. By giving the name of the environmental package, a selection of fields can be made from the subtables and can be reported",
-          "type": "array",
-          "minItems": 1,
           "items": {
             "properties": {
               "value": {
@@ -283,8 +251,6 @@
         },
         "collectionEventInformationEnvironmentBiome": {
           "description": "Biomes are defined based on factors such as plant structures, leaf types, plant spacing, and other factors like climate. Biome should be treated as the descriptor of the broad ecological context of a sample. Examples include: desert, taiga, deciduous woodland, or coral reef. EnvO (v 2013-06-14) terms can be found via the link: www.environmentontology.org/Browse-EnvO",
-          "type": "array",
-          "minItems": 1,
           "items": {
             "properties": {
               "value": {
@@ -295,8 +261,6 @@
         },
         "collectionEventInformationEnvironmentFeature": {
           "description": "Environmental feature level includes geographic environmental features. Compared to biome, feature is a descriptor of the more local environment. Examples include: harbor, cliff, or lake. EnvO (v 2013-06-14) terms can be found via the link: www.environmentontology.org/Browse-EnvO",
-          "type": "array",
-          "minItems": 1,
           "items": {
             "properties": {
               "value": {
@@ -307,8 +271,6 @@
         },
         "collectionEventInformationEnvironmentMaterial": {
           "description": "The environmental material level refers to the material that was displaced by the sample, or material in which a sample was embedded, prior to the sampling event. Environmental material terms are generally mass nouns. Examples include: air, soil, or water. EnvO (v 2013-06-14) terms can be found via the link: www.environmentontology.org/Browse-EnvO",
-          "type": "array",
-          "minItems": 1,
           "items": {
             "properties": {
               "value": {
@@ -319,8 +281,6 @@
         },
         "marineSamplingSamplingCampaign": {
           "description": "Refers to a finite or indefinite activity aiming at collecting data/samples, e.g. a cruise, a time series, a mesocosm experiment. Example: TARA_20110401Z.",
-          "type": "array",
-          "minItems": 1,
           "items": {
             "properties": {
               "value": {
@@ -331,8 +291,6 @@
         },
         "marineSamplingSamplingStation": {
           "description": "Refers to the site/station where data/sample collection is performed. Example: TARA_100.",
-          "type": "array",
-          "minItems": 1,
           "items": {
             "properties": {
               "value": {
@@ -343,8 +301,6 @@
         },
         "marineSamplingSamplingPlatform": {
           "description": "Refers to the unique stage from which the sampling device has been deployed. Includes Platform category from SDN:L06, http://seadatanet.maris2.nl/v_bodc_vocab_v2/search.asp?lib=L06, and Platform name. Example: Research Vessel Tara.",
-          "type": "array",
-          "minItems": 1,
           "items": {
             "properties": {
               "value": {
@@ -355,8 +311,6 @@
         },
         "marineEnvironmentMarineRegion": {
           "description": "The geographical origin of the sample as defined by the marine region name chosen from the Marine Regions vocabulary at http://www.marineregions.org/. Example: Aegean Sea.",
-          "type": "array",
-          "minItems": 1,
           "items": {
             "properties": {
               "value": {
@@ -367,8 +321,6 @@
         },
         "marineEnvironmentSalinitySensor": {
           "description": "Salinity of water at the time of taking the sample. Format: ##.####, SDN:P02:75:PSAL, SDN:P06:46:UGKG for PSU. Example: 39.2268.",
-          "type": "array",
-          "minItems": 1,
           "items": {
             "properties": {
               "value": {
@@ -380,8 +332,6 @@
         },
         "marineEnvironmentOxygenSensor": {
           "description": "Oxygen concentration parameters in the water column measured in volts and converted to micromoles per kilogrammes. Format: ###.####, SDN:P02:75:DOXY, SDN:P06:46:KGUM for µmol/kg. Example: 217.7895.",
-          "type": "array",
-          "minItems": 1,
           "items": {
             "properties": {
               "value": {
@@ -393,8 +343,6 @@
         },
         "marineEnvironmentNitrateSensor": {
           "description": "Nitrate concentration parameters in the water column measured in volts and converted to micromoles per litres. Format: ##.####, SDN:P02:75:NTRA, SDN:P06:46:UPOX for µmol/L. Example: 0.2259.",
-          "type": "array",
-          "minItems": 1,
           "items": {
             "properties": {
               "value": {
@@ -406,8 +354,6 @@
         },
         "marineEnvironmentTemperature": {
           "description": "Temperature of water at the time of taking the sample. Format: ##.####, SDN:P02:75:TEMP, SDN:P06:46:UPAA for °C. Example: 17.7122.",
-          "type": "array",
-          "minItems": 1,
           "items": {
             "properties": {
               "value": {
@@ -419,8 +365,6 @@
         },
         "marineEnvironmentChlorophyllSensor": {
           "description": "Fluorescence of the water measured in volts and converted to milligrammes of chlorophyll per cubic metre. Format: ##.####, SDN:P02:75:CPWC, SDN:P06:46:UMMC for mg Chl/m3. Example: 0.066.",
-          "type": "array",
-          "minItems": 1,
           "items": {
             "properties": {
               "value": {
@@ -432,8 +376,6 @@
         },
         "referenceCitation": {
           "description": "Citation of the Sample Registry (HTML version) at the PANGAEA. Example: doi.pangaea.de/10.1594/PANGAEA.76752.",
-          "type": "array",
-          "minItems": 1,
           "items": {
             "properties": {
               "value": {
@@ -444,8 +386,6 @@
         },
         "referenceFurtherDetails": {
           "description": "Reference details related to a sample in form of an URI.",
-          "type": "array",
-          "minItems": 1,
           "items": {
             "properties": {
               "value": {
