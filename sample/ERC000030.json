@@ -1,5 +1,5 @@
 {
-  "id": "http://submission.ebi.ac.uk/api/jsonschema-repo/ERC000030",
+  "id": "ERC000030",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "ENA Tara Oceans Schema",
   "description": "Minimum information about a Tara Oceans sample. A checklist for reporting metadata of oceanic plankton samples associated with genomics data from the Tara Oceans Expedition.",
