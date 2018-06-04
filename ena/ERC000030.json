@@ -6,181 +6,497 @@
   "version": "1.0.0",
   "author": "subs",
   "type": "object",
+  "required": [
+    "alias",
+    "taxonId",
+    "releaseDate",
+    "attributes"
+  ],
   "properties": {
-    "marineEvent": {
+    "alias": {
+      "description": "An unique identifier in a submission.",
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "description": "Title of the sample.",
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "description": "More extensive free-form description.",
+      "type": "string",
+      "minLength": 1
+    },
+    "taxonId": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "taxon": {
+      "type": "string",
+      "minLength": 1
+    },
+    "releaseDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "attributes": {
+      "description": "Attributes for describing a sample.",
       "type": "object",
       "required": [
-        "eventDateTimeStart",
-        "latitudeStart",
-        "longitudeStart"
+        "marineEventDateTimeStart",
+        "marineEventLatitudeStart",
+        "marineEventLongitudeStart",
+        "marineSampleDepth",
+        "marineSampleProtocolLabel",
+        "nonSampleTermsProjectName",
+        "collectionEventInformationEnvironmentalPackage",
+        "collectionEventInformationEnvironmentBiome",
+        "collectionEventInformationEnvironmentFeature",
+        "collectionEventInformationEnvironmentMaterial",
+        "marineSamplingSamplingCampaign",
+        "marineSamplingSamplingStation",
+        "marineSamplingSamplingPlatform",
+        "marineEnvironmentMarineRegion",
+        "marineEnvironmentSalinitySensor",
+        "marineEnvironmentTemperature"
       ],
       "properties": {
-        "eventLabel" : {
-          "type": "string",
-          "minLength": 3
+        "marineEventLabel": {
+          "description": "An Event corresponds to the deployment of a sampling device. It is bound in space and time. The Event Label is a unique identifier composed of the project prefix \"TARA\", sampling date/time \"yyyymmddThh:mm:ssZ\", station number \"000\" and a short label to indicate the sampling device used, e.g. \"EVENT_CAST\", \"EVENT_NET\", \"EVENT_PUMP\". Example: TARA_20110416T1508Z_100_EVENT_CAST.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "value": {
+                "type": "string",
+                "pattern": "^TARA\\w*",
+                "minLength": 5
+              }
+            }
+          }
         },
-        "eventDateTimeStart": {
-          "type": "string",
-          "format": "date-time"
+        "marineEventDateTimeStart": {
+          "description": "Date and time in UTC when the sampling event started, e.g. each CTD cast, net tow, or bucket collection is a distinct event. Format: yyyy-mm-ddThh:mm:ssZ. Example: 2011-04-16T15:05:30Z.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "value": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          }
         },
-        "eventDateTimeEnd": {
-          "type": "string",
-          "format": "date-time"
+        "marineEventDateTimeEnd": {
+          "description": "Date and time in UTC when the sampling event ended, e.g. each CTD cast, net tow, or bucket collection is a distinct event. Format: yyyy-mm-ddThh:mm:ssZ. Example: 2011-04-16T15:38:00Z.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "value": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          }
         },
-        "latitudeStart": {
-          "type": "string",
-          "pattern": "^-?\d{1,2}\.?\d{0,4}$"
+        "marineEventLatitudeStart": {
+          "description": "Latitude of the location where the sampling event started, e.g. each CTD cast, net tow, or bucket collection is a distinct event. Format: ##.####, Decimal degrees; North= +, South= -; Use WGS 84 for GPS data. Example: -24.6666.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "value": {
+                "type": "string",
+                "pattern": "^-?\\d{1,2}\\.?\\d{0,4}$"
+              }
+            }
+          }
         },
-        "longitudeStart": {
-          "type": "string",
-          "pattern": "^-?\d{1,2}\.?\d{0,4}$"
+        "marineEventLongitudeStart": {
+          "description": "Longitude of the location where the sampling event started, e.g. each CTD cast, net tow, or bucket collection is a distinct event. Format: ###.####, Decimal degrees; East= +, West= -; Use WGS 84 for GPS data. Example: -096.1012.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "value": {
+                "type": "string",
+                "pattern": "^-?\\d{1,3}\\.?\\d{0,4}$"
+              }
+            }
+          }
         },
-        "latitudeEnd": {
-          "type": "string",
-          "pattern": "^-?\d{1,2}\.?\d{0,4}$"
+        "marineEventLatitudeEnd": {
+          "description": "Latitude of the location where the sampling event ended, e.g. each CTD cast, net tow, or bucket collection is a distinct event. Format: ##.####, Decimal degrees; North= +, South= -; Use WGS 84 for GPS data. Example: -24.6643.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "value": {
+                "type": "string",
+                "pattern": "^-?\\d{1,2}\\.?\\d{0,4}$"
+              }
+            }
+          }
         },
-        "longitudeEnd": {
-          "type": "string",
-          "pattern": "^-?\d{1,2}\.?\d{0,4}$"
+        "marineEventLongitudeEnd": {
+          "description": "Longitude of the location where the sampling event ended, e.g. each CTD cast, net tow, or bucket collection is a distinct event. Format: ###.####, Decimal degrees; East= +, West= -; Use WGS 84 for GPS data. Example: -096.1171.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "value": {
+                "type": "string",
+                "pattern": "^-?\\d{1,3}\\.?\\d{0,4}$"
+              }
+            }
+          }
+        },
+        "marineSampleDepth": {
+          "description": "The distance below the surface of the water at which a measurement was made or a sample was collected. Format: ####.##, Positive below the sea surface. SDN:P06:46:ULAA for m. Example: 14.71",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "value": {
+                "type": "string",
+                "pattern": "^-?\\d{1,4}\\.?\\d{0,2}$"
+              }
+            }
+          }
+        },
+        "marineSampleSampleCollectionDevice": {
+          "description": "The sampling device(s) used for the Event. Example: CTD(sbe9C)/Rosette with Niskin bottles.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "value": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "marineSampleProtocolLabel": {
+          "description": "Identifies the protocol used to produce the sample, e.g. filtration and preservation. Example: BACT_NUC_W0.22-1.6.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "value": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "marineSampleSizeFractionLowerThreshold": {
+          "description": "SAMPLE_PROTOCOL_Size-Fraction_Lower-Threshold_(µm) indicates the lower size threshold. Materials smaller than the size threshold are excluded from the sample. Example: 0.22 µm",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "value": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "marineSampleSizeFractionUpperThreshold": {
+          "description": "PLE_PROTOCOL_Size-Fraction_Upper-Threshold_(µm) indicates the upper size threshold. Materials larger than the size threshold are excluded from the sample.Example: 1.6 µm",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "value": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "marineSampleSampleStatus": {
+          "description": "Refers to the completness of sample metadata validation. Example: preliminary but can be used to provide data discovery services.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "value": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "marineSampleLastUpdateDate": {
+          "description": "Date of the last update of this sample in the SAMPLES REGISTRY. Example: 2014-03-01Z.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "value": {
+                "type": "string",
+                "format": "date"
+              }
+            }
+          }
+        },
+        "nonSampleTermsProjectName": {
+          "description": "Name of the project within which the sequencing was organized.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "value": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "collectionEventInformationEnvironmentalPackage": {
+          "description": "MIGS/MIMS/MIMARKS extension for reporting of measurements and observations obtained from one or more of the environments where the sample was obtained. All environmental packages listed here are further defined in separate subtables. By giving the name of the environmental package, a selection of fields can be made from the subtables and can be reported",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "value": {
+                "type": "string",
+                "enum": [
+                  "Air",
+                  "Built-environment",
+                  "Host-associated",
+                  "Human-associated",
+                  "Human-gut",
+                  "Human-oral",
+                  "Human-skin",
+                  "Human-vaginal",
+                  "Microbial mat/biofilm",
+                  "Miscellaneous natural or artificial environment",
+                  "Plant-associated",
+                  "Sediment",
+                  "Soil",
+                  "Wastewater/sludge",
+                  "Water"
+                ]
+              }
+            }
+          }
+        },
+        "collectionEventInformationEnvironmentBiome": {
+          "description": "Biomes are defined based on factors such as plant structures, leaf types, plant spacing, and other factors like climate. Biome should be treated as the descriptor of the broad ecological context of a sample. Examples include: desert, taiga, deciduous woodland, or coral reef. EnvO (v 2013-06-14) terms can be found via the link: www.environmentontology.org/Browse-EnvO",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "value": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "collectionEventInformationEnvironmentFeature": {
+          "description": "Environmental feature level includes geographic environmental features. Compared to biome, feature is a descriptor of the more local environment. Examples include: harbor, cliff, or lake. EnvO (v 2013-06-14) terms can be found via the link: www.environmentontology.org/Browse-EnvO",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "value": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "collectionEventInformationEnvironmentMaterial": {
+          "description": "The environmental material level refers to the material that was displaced by the sample, or material in which a sample was embedded, prior to the sampling event. Environmental material terms are generally mass nouns. Examples include: air, soil, or water. EnvO (v 2013-06-14) terms can be found via the link: www.environmentontology.org/Browse-EnvO",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "value": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "marineSamplingSamplingCampaign": {
+          "description": "Refers to a finite or indefinite activity aiming at collecting data/samples, e.g. a cruise, a time series, a mesocosm experiment. Example: TARA_20110401Z.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "value": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "marineSamplingSamplingStation": {
+          "description": "Refers to the site/station where data/sample collection is performed. Example: TARA_100.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "value": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "marineSamplingSamplingPlatform": {
+          "description": "Refers to the unique stage from which the sampling device has been deployed. Includes Platform category from SDN:L06, http://seadatanet.maris2.nl/v_bodc_vocab_v2/search.asp?lib=L06, and Platform name. Example: Research Vessel Tara.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "value": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "marineEnvironmentMarineRegion": {
+          "description": "The geographical origin of the sample as defined by the marine region name chosen from the Marine Regions vocabulary at http://www.marineregions.org/. Example: Aegean Sea.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "value": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "marineEnvironmentSalinitySensor": {
+          "description": "Salinity of water at the time of taking the sample. Format: ##.####, SDN:P02:75:PSAL, SDN:P06:46:UGKG for PSU. Example: 39.2268.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "value": {
+                "type": "string",
+                "pattern": "^\\d{1,2}\\.?\\d{0,4}$"
+              }
+            }
+          }
+        },
+        "marineEnvironmentOxygenSensor": {
+          "description": "Oxygen concentration parameters in the water column measured in volts and converted to micromoles per kilogrammes. Format: ###.####, SDN:P02:75:DOXY, SDN:P06:46:KGUM for µmol/kg. Example: 217.7895.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "value": {
+                "type": "string",
+                "pattern": "^\\d{1,3}\\.?\\d{0,4}$"
+              }
+            }
+          }
+        },
+        "marineEnvironmentNitrateSensor": {
+          "description": "Nitrate concentration parameters in the water column measured in volts and converted to micromoles per litres. Format: ##.####, SDN:P02:75:NTRA, SDN:P06:46:UPOX for µmol/L. Example: 0.2259.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "value": {
+                "type": "string",
+                "pattern": "^\\d{1,2}\\.?\\d{0,4}$"
+              }
+            }
+          }
+        },
+        "marineEnvironmentTemperature": {
+          "description": "Temperature of water at the time of taking the sample. Format: ##.####, SDN:P02:75:TEMP, SDN:P06:46:UPAA for °C. Example: 17.7122.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "value": {
+                "type": "string",
+                "pattern": "^\\d{1,2}\\.?\\d{0,4}$"
+              }
+            }
+          }
+        },
+        "marineEnvironmentChlorophyllSensor": {
+          "description": "Fluorescence of the water measured in volts and converted to milligrammes of chlorophyll per cubic metre. Format: ##.####, SDN:P02:75:CPWC, SDN:P06:46:UMMC for mg Chl/m3. Example: 0.066.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "value": {
+                "type": "string",
+                "pattern": "^\\d{1,2}\\.?\\d{0,4}$"
+              }
+            }
+          }
+        },
+        "referenceCitation": {
+          "description": "Citation of the Sample Registry (HTML version) at the PANGAEA. Example: doi.pangaea.de/10.1594/PANGAEA.76752.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "value": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "referenceFurtherDetails": {
+          "description": "Reference details related to a sample in form of an URI.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "value": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          }
+        }
+      },
+      "patternProperties": {
+        "^.*$": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "properties": {
+              "value": { "type": "string", "minLength": 1 },
+              "units": { "type": "string", "minLength": 1 },
+              "terms": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "url": {"type": "string", "format": "uri" }
+                  },
+                  "required": ["url"]
+                }
+              }
+            },
+            "required": ["value"]
+          }
         }
       }
     },
-    "marineSample": {
-      "type": "object",
-      "required": [
-        "depth",
-        "protocolLabel"
-      ],
-      "properties": {
-        "depth": {
-          "type": "string",
-          "pattern": "^-?\d{1,4}\.?\d{0,2}$"
+    "sampleRelationships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "alias": { "type": "string", "minLength": 1 },
+          "accession": { "type": "string", "minLength": 1 },
+          "team": { "type": "string", "minLength": 1 },
+          "relationshipNature": {
+            "type": "string",
+            "enum": [ "derived from", "child of", "same as", "recurated from" ]
+          }
         },
-        "sampleCollectionDevice": {
-          "type": "string"
-        },
-        "protocolLabel": {
-          "type": "string"
-        },
-        "sizeFractionLowerThreshold": {
-          "type": "string"
-        },
-        "sizeFractionUpperThreshold": {
-          "type": "string"
-        },
-        "sampleStatus": {
-          "type": "string"
-        },
-        "lastUpdateDate": {
-          "type": "string",
-          "format": "date"
-        }
-      }
-    },
-    "nonSampleTerms": {
-      "type": "object",
-      "required": [
-        "projectName"
-      ],
-      "properties": {
-        "projectName": {
-          "type": "string"
-        }
-      }
-    },
-    "collectionEventInformation": {
-      "type": "object",
-      "required": [
-        "environmentalPackage",
-        "environmentBiome",
-        "environmentFeature",
-        "environmentMaterial"
-      ],
-      "properties": {
-        "environmentalPackage": {
-          "type": "string",
-          "enum": [
-            "Air", "Built-environment", "Host-associated", "Human-associated",
-            "Human-gut", "Human-oral", "Human-skin", "Human-vaginal",
-            "Microbial mat/biofilm", "Miscellaneous natural or artificial environment",
-            "Plant-associated", "Sediment", "Soil", "Wastewater/sludge",
-            "Water"
-          ]
-        },
-        "environmentBiome": {
-          "type": "string"
-        },
-        "environmentFeature": {
-          "type": "string"
-        },
-        "environmentMaterial": {
-          "type": "string"
-        }
-      }
-    },
-    "marineSampling": {
-      "type": "object",
-      "required": [
-        "samplingCampaign",
-        "samplingStation",
-        "samplingPlatform"
-      ],
-      "properties": {
-        "samplingCampaign": {
-          "type": "string"
-        },
-        "samplingStation": {
-          "type": "string"
-        },
-        "samplingPlatform": {
-          "type": "string"
-        }
-      }
-    },
-    "marineEnvironment": {
-      "type": "object",
-      "required": [
-        "marineRegion",
-        "salinitySensor",
-        "temperature"
-      ],
-      "properties": {
-        "marineRegion": {
-          "type": "string",
-          "enum": []
-        },
-        "salinitySensor": {
-          "type": "string",
-          "pattern": "^\d{1,2}\.?\d{0,4}$"
-        },
-        "oxygenSensor": {
-          "type": "string",
-          "pattern": "^\d{1,3}\.?\d{0,4}$"
-        },
-        "nitrateSensor": {
-          "type": "string",
-          "pattern": "^\d{1,2}\.?\d{0,4}$"
-        },
-        "temperature": {
-          "type": "string",
-          "pattern": "^\d{1,2}\.?\d{0,4}$"
-        },
-        "chlorophyllSensor": {
-          "type": "string",
-          "pattern": "^\d{1,2}\.?\d{0,4}$"
-        }
-      }
-    },
-    "reference": {
-      "type": "object",
-      "properties": {
-        "citation":  {
-          "type": "string"
-        },
-        "furtherDetails": {
-          "type": "string",
-          "format": "uri"
-        }
+        "oneOf": [
+          { "required": ["alias", "team", "relationshipNature"] },
+          { "required": ["accession", "relationshipNature"] }
+        ]
       }
     }
   }
