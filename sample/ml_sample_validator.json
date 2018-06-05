@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/EMBL-EBI-SUBS/validation-schemas/master/sample/metabolights/usi_ml_sample_validator.json",
+  "$id": "https://raw.githubusercontent.com/EMBL-EBI-SUBS/validation-schemas/master/sample/ml_sample_validator.json",
   "title": "MetaboLights Sample Validator Schema",
   "description": "Schema based on rules found in http://isa-specs.readthedocs.io/en/latest/isajson.html#sample-schema-json",
   "version": "1.0.0",
