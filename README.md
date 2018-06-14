@@ -5,6 +5,7 @@ Currently it contains the following schemas:
 - Sample
   - [Submissions Sample Schema](https://github.com/EMBL-EBI-SUBS/validation-schemas/blob/master/sample/sample-schema.json)
   - ENA Tara Oceans Schema: [ERC000030](https://github.com/EMBL-EBI-SUBS/validation-schemas/blob/master/sample/ERC000030.json)
+  - [MetaboLights Sample Schema](https://github.com/EMBL-EBI-SUBS/validation-schemas/blob/master/sample/ml_sample_schema.json)
 - Study
   - [Submissions Study Schema](https://github.com/EMBL-EBI-SUBS/validation-schemas/blob/master/study/study-schema.json)
 - Assay
