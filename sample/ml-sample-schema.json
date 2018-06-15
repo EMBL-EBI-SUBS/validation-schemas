@@ -1,12 +1,12 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "MetaboLights Sample Validator Schema",
+    "title": "MetaboLights Sample Validation Schema",
     "description": "Schema based on rules found in http://isa-specs.readthedocs.io/en/latest/isajson.html#sample-schema-json",
     "version": "1.0.0",
     "author": "metabolights",
     "type": "object",
     "properties": {
-        
+
         "alias": {
             "description": "A sample unique identifier in a submission.",
             "type": "string"
