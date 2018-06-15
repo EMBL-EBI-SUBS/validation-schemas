@@ -3,7 +3,7 @@
   "title": "MetaboLights Study Validation Schema",
   "description": "Schema based on rules found in http://isa-specs.readthedocs.io/en/latest/isajson.html#study-schema-json",
   "version": "1.0.0",
-  "author": "subs",
+  "author": "metabolights",
   "type": "object",
   "properties": {
     "alias": {
