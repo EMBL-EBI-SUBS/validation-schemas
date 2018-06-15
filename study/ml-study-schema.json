@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Submissions Study Schema",
-  "description": "A base validation study schema",
+  "title": "MetaboLights Study Validation Schema",
+  "description": "Schema based on rules found in http://isa-specs.readthedocs.io/en/latest/isajson.html#study-schema-json",
   "version": "1.0.0",
   "author": "subs",
   "type": "object",
