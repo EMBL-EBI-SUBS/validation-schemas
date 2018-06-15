@@ -125,5 +125,5 @@
       ]
     }
   },
-  "required": [ "alias" ]
+  "required": [ "alias", "attributes" ]
 }
