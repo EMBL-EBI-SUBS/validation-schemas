@@ -127,6 +127,7 @@
   },
   "required": [
     "alias",
-    "studyType"
+    "studyType",
+    "attributes"
   ]
 }
