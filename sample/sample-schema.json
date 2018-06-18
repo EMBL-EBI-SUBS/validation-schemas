@@ -75,7 +75,7 @@
                         "enum": [ "derived from", "child of", "same as", "recurated from" ]
                     }
                 },
-                "oneOf": [
+                "anyOf": [
                     { "required": ["alias", "team", "relationshipNature"] },
                     { "required": ["accession", "relationshipNature"] }
                 ]

@@ -33,23 +33,22 @@
             "type": "string"
         },
         "sampleRelationships": {
-            "description": "List of relationships between samples.",
             "type": "array",
             "items": {
                 "type": "object",
                 "properties": {
-                    "target": {
-                        "description": "Sample accession to which the sample relationship refers to.",
+                    "alias": { "type": "string", "minLength": 1 },
+                    "accession": { "type": "string", "minLength": 1 },
+                    "team": { "type": "string", "minLength": 1 },
+                    "relationshipNature": {
                         "type": "string",
-                        "pattern": "^SAM[END][AG]?[0-9]+"
-                    },
-                    "nature": {
-                        "description": "Nature of the relationship between the samples.",
-                        "type": "string",
-                        "enum": ["derived from", "same as", "child of"]
+                        "enum": [ "derived from", "child of", "same as", "recurated from" ]
                     }
                 },
-                "required": ["target", "nature"]
+                "anyOf": [
+                    { "required": ["alias", "team", "relationshipNature"] },
+                    { "required": ["accession", "relationshipNature"] }
+                ]
             }
         },
         "attributes": {

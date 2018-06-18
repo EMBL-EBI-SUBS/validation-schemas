@@ -20,6 +20,19 @@
             "description": "More extensive free-form description.",
             "type": "string"
         },
+        "studyType": {
+            "type": "string",
+            "enum": [ "Sequencing", "FunctionalGenomics", "Metabolomics", "Proteomics" ]
+        },
+        "projectRef": {
+            "description": "Reference to project.",
+            "$ref": "#/definitions/submittableRef" 
+        },
+        "protocolRefs": {
+            "description": "Reference(s) to protocol(s).",
+            "type": "array",
+            "items": { "$ref": "#/definitions/submittableRef" }
+        },
         "attributes": {
             "description": "Attributes for describing a study.",
             "type": "object",
@@ -48,19 +61,6 @@
                     }
                 }
             }
-        },
-        "studyType": {
-            "type": "string",
-            "enum": [ "Sequencing", "FunctionalGenomics", "Metabolomics", "Proteomics" ]
-        },
-        "projectRef": {
-            "description": "Reference to project.",
-            "$ref": "#/definitions/submittableRef" 
-        },
-        "protocolRefs": {
-            "description": "Reference(s) to protocol(s).",
-            "type": "array",
-            "items": { "$ref": "#/definitions/submittableRef" }
         }
     },
     "definitions": {
@@ -71,7 +71,7 @@
 				"accession": { "type": "string", "minLength": 1 },
 				"team": { "type": "string", "minLength": 1 }
 			},
-			"oneOf": [
+			"anyOf": [
 				{ "required": [ "alias", "team" ] },
 				{ "required": [ "accession" ] }
 			]
