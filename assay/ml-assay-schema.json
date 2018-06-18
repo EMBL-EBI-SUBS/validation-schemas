@@ -119,7 +119,7 @@
         "accession": { "type": "string", "minLength": 1 },
         "team": { "type": "string", "minLength": 1 }
       },
-      "oneOf": [
+      "anyOf": [
         { "required": [ "alias", "team" ] },
         { "required": [ "accession" ] }
       ]

@@ -30,44 +30,28 @@
           "description": "Descriptors to define the study"
         }
       },
-      "required": [
-        "factors",
-        "studyDesignDescriptors"
-      ],
+      "required": [ "factors", "studyDesignDescriptors" ],
       "patternProperties": {
-        "^.*$": {
+        "^.*$": { 
           "type": "array",
           "minItems": 1,
           "items": {
             "type": "object",
             "properties": {
-              "value": {
-                "type": "string",
-                "minLength": 1
-              },
-              "units": {
-                "type": "string",
-                "minLength": 1
-              },
+              "value": { "type": "string", "minLength": 1 },
+              "units": { "type": "string", "minLength": 1 },
               "terms": {
                 "type": "array",
                 "items": {
                   "type": "object",
                   "properties": {
-                    "url": {
-                      "type": "string",
-                      "format": "uri"
-                    }
+                      "url": {"type": "string", "format": "uri" }                    
                   },
-                  "required": [
-                    "url"
-                  ]
+                  "required": ["url"]
                 }
               }
             },
-            "required": [
-              "value"
-            ]
+            "required": ["value"]
           }
         }
       }
@@ -95,39 +79,17 @@
   },
   "definitions": {
     "submittableRef": {
-      "type": "object",
-      "properties": {
-        "alias": {
-          "type": "string",
-          "minLength": 1
-        },
-        "accession": {
-          "type": "string",
-          "minLength": 1
-        },
-        "team": {
-          "type": "string",
-          "minLength": 1
-        }
-      },
-      "oneOf": [
-        {
-          "required": [
-            "alias",
-            "team"
-          ]
-        },
-        {
-          "required": [
-            "accession"
-          ]
-        }
-      ]
+			"type": "object",
+			"properties": {
+				"alias": { "type": "string", "minLength": 1 },
+				"accession": { "type": "string", "minLength": 1 },
+				"team": { "type": "string", "minLength": 1 }
+			},
+			"anyOf": [
+				{ "required": [ "alias", "team" ] },
+				{ "required": [ "accession" ] }
+			]
     }
   },
-  "required": [
-    "alias",
-    "studyType",
-    "attributes"
-  ]
+  "required": [ "alias", "studyType", "attributes" ]
 }
