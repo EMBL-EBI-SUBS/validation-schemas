@@ -9,6 +9,7 @@ Currently it contains the following schemas:
 - Study
   - [Submissions Study Schema](https://github.com/EMBL-EBI-SUBS/validation-schemas/blob/master/study/study-schema.json)
   - [MetaboLights Study Schema](https://github.com/EMBL-EBI-SUBS/validation-schemas/blob/master/study/ml-study-schema.json)
+  - [ENA Study Schema](https://github.com/EMBL-EBI-SUBS/validation-schemas/blob/master/study/ena-study-schema.json)
 - Assay
   - [Submissions Assay Schema](https://github.com/EMBL-EBI-SUBS/validation-schemas/blob/master/assay/assay-schema.json)
   - [MetaboLights Assay Schema](https://github.com/EMBL-EBI-SUBS/validation-schemas/blob/master/assay/ml-assay-schema.json)
