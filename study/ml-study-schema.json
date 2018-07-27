@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "MetaboLights Study Validation Schema",
   "description": "Schema based on rules found in http://isa-specs.readthedocs.io/en/latest/isajson.html#study-schema-json",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "metabolights",
   "type": "object",
   "properties": {
@@ -12,22 +12,24 @@
       "minLength": 1
     },
     "title": {
-      "description": "Title of the study.",
-      "type": "string"
+      "description": "A title for the Study. Please use the same title as the first publication",
+      "type": "string",
+      "minLength": 8
     },
     "description": {
-      "description": "More extensive free-form description.",
-      "type": "string"
+      "description": "A brief description of the study aims. Please use the abstract of the publication",
+      "type": "string",
+      "minLength": 60
     },
     "attributes": {
-      "description": "Attributes for describing a study.",
+      "description": "Attributes that describe a study.",
       "type": "object",
       "properties": {
         "factors": {
-          "description": "Experimental Factors used in the study"
+          "description": "Experimental Factors that drive this study, e.g. Dose, Collection Time Point, Compound, etc"
         },
         "studyDesignDescriptors": {
-          "description": "Descriptors to define the study"
+          "description": "The type of study design being employed, Metabolomics/Metabonomics, Lipidomics, Metabolic Footprinting, Metabolic Fingerprinting, Targeted Profiling, Global Profiling."
         }
       },
       "required": [ "factors", "studyDesignDescriptors" ],
@@ -38,7 +40,7 @@
           "items": {
             "type": "object",
             "properties": {
-              "value": { "type": "string", "minLength": 1 },
+              "value": { "type": "string", "minLength": 3 },
               "units": { "type": "string", "minLength": 1 },
               "terms": {
                 "type": "array",
@@ -61,7 +63,11 @@
       "enum": [
         "Sequencing",
         "FunctionalGenomics",
-        "Metabolomics",
+        "Metabolomics_LCMS",
+        "Metabolomics_GCMS",
+        "Metabolomics_ImagingMS",
+        "Metabolomics_NMR",
+        "Metabolomics_ImagingNMR",
         "Proteomics"
       ]
     },
