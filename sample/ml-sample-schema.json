@@ -20,8 +20,10 @@
             "type": "string"
         },
         "title": {
-            "description": "A sample title.",
-            "type": "string"
+            "description": "A descriptive name for the sample.",
+            "type": "string",
+            "minLength": 4,
+            "maxLength": 50
         },
         "releaseDate": {
             "description": "Date from which this sample is released publicly.",
@@ -56,10 +58,10 @@
             "type": "object",
             "properties": {
                 "Organism": {
-                    "description": "Sample organism source"
+                    "description": "Taxonomic information for the Biological material (for example, Species, genus, strain). Ideally, provide NCBI TaxID"
                 },
                 "Organism part": {
-                    "description": "Sample organism part source"
+                    "description": "The part of an organism's anatomy or substance, arising from an organism from which the biomaterial was derived. E.g. tissue, organ, system, sperm, blood, cell type, or body location (arm)."
                 }
             },
             "required": ["Organism","Organism part"],
