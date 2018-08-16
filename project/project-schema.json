@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "author": "subs",
   "type": "object",
-  "required": ["alias", "title", "description", "releaseDate"]
+  "required": ["alias", "title", "description", "releaseDate"],
   "properties": {
     "alias": {
       "description": "An unique identifier in a submission.",
@@ -134,7 +134,7 @@
     "projectRef": {
       "description": "Reference to project.",
       "$ref": "#/definitions/submittableRef"
-    },
+    }
   },
   "definitions": {
     "submittableRef": {
