@@ -130,10 +130,6 @@
     "releaseDate": {
       "type": "string",
       "format": "date"
-    },
-    "projectRef": {
-      "description": "Reference to project.",
-      "$ref": "#/definitions/submittableRef"
     }
   },
   "definitions": {
