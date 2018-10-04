@@ -30,9 +30,33 @@
         },
         "studyDesignDescriptors": {
           "description": "The type of study design being employed, Metabolomics/Metabonomics, Lipidomics, Metabolic Footprinting, Metabolic Fingerprinting, Targeted Profiling, Global Profiling."
+        },
+        "studyType": {
+          "description": "The type of technology Type used for the study. Example - Metabolomics_LCMS, Metabolomics_GCMS, Metabolomics_ImagingMS, Metabolomics_NMR, Metabolomics_ImagingNMR.",
+          "type": "array",
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "string",
+                "enum": [
+                  "Metabolomics_LCMS",
+                  "Metabolomics_GCMS",
+                  "Metabolomics_ImagingMS",
+                  "Metabolomics_NMR",
+                  "Metabolomics_ImagingNMR"
+                ]
+              }
+            },
+            "required": [
+              "value"
+            ]
+          }
         }
       },
-      "required": [ "factors", "studyDesignDescriptors" ],
+      "required": [ "factors", "studyDesignDescriptors",
+        "studyType" ],
       "patternProperties": {
         "^.*$": { 
           "type": "array",
